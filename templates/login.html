@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Login Form</title>
+	<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap" rel="stylesheet">
+	<style>
+		body {
+			background-color: #f3f3f3;
+			font-family: 'Poppins', sans-serif;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: 100vh;
+			margin: 0;
+		}
+
+		.container {
+			background-color: #FFF;
+			box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+			border-radius: 10px;
+			padding: 40px;
+			width: 400px;
+			max-width: 100%;
+			text-align: center;
+		}
+
+		.container h1 {
+			color: #333;
+			font-size: 30px;
+			margin-bottom: 30px;
+		}
+
+		.form-group {
+			display: flex;
+			flex-direction: column;
+			margin-bottom: 20px;
+		}
+
+		label {
+			color: #666;
+			font-size: 16px;
+			margin-bottom: 5px;
+		}
+
+		input {
+			border: none;
+			background-color: #F3F3F3;
+			border-radius: 5px;
+			padding: 10px;
+			font-size: 16px;
+			color: #333;
+			outline: none;
+			margin-top: 5px;
+		}
+
+		button {
+			background-color: #7f0ab5;
+			color: #FFF;
+			border: none;
+			border-radius: 5px;
+			padding: 10px 20px;
+			font-size: 16px;
+			cursor: pointer;
+			transition: background-color 0.3s ease;
+		}
+
+		button:hover {
+			background-color: #7f0ab5;
+		}
+
+		.alert {
+			background-color: #FF4136;
+			color: #FFF;
+			border-radius: 5px;
+			padding: 10px;
+			margin-bottom: 20px;
+			text-align: left;
+			font-size: 16px;
+		}
+
+	</style>
+</head>
+<body>
+
+	<div class="container">
+		<h1>Login</h1>
+		{% with messages = get_flashed_messages() %}
+		{% if messages %}
+		<div class="alert">{{ messages[0] }}</div>
+		{% endif %}
+		{% endwith %}
+		<form method="POST" action="/login">
+			<div class="form-group">
+				<label>Email</label>
+				<input type="email" name="email" placeholder="Your Email" required>
+			</div>
+
+			<div class="form-group">
+				<label>Password</label>
+				<input type="password" name="password" placeholder="Your Password" required>
+			</div>
+			<button type="submit">Login</button>
+		</form>
+	</div>
+
+</body>
+</html>
+

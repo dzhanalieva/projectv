@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+  background-color: #f4f4f4;
+}
+
+h1 {
+  font-size: 30px;
+  margin: 30px 0px;
+  text-align: center;
+  color: #333;
+}
+
+form {
+  margin: 0 auto;
+  max-width: 500px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+form p {
+  margin: 0;
+  padding: 0;
+}
+
+label {
+  display: block;
+  font-size: 18px;
+  font-weight: 600;
+  margin: 20px 0 5px 0;
+  color: #333;
+}
+
+input[type='text'],
+input[type='file'] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+  color: #941acc;
+}
+
+.create__file {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.create__file-label {
+  width: 100%;
+  max-width: 300px;
+  padding: 20px;
+  background: #7f0ab5;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+.create__file-label:hover {
+  background: #7f0ab5;
+}
+
+.create__file-input {
+  display: none;
+}
+  
+button[type='submit'] {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 5px;
+  background: #7f0ab5;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+button[type='submit']:hover {
+  background: #555;
+}
+
+        </style>
+    <h1>Загрузить фото на сайт</h1>
+    <form method='post' enctype='multipart/form-data'>
+        <p>
+            <label for='title'>Title</label> 
+            <input type='text' name='title'>
+        </p>
+        <p>
+            <label for='description'>Description</label>
+            <input type='text' name='description'>
+        </p>
+        <div class="create__file">
+            <label class="create__file-label" for="file">Выберите фото</label>
+            <input class="create__file-input" id="file" type="file" name="files[]" multiple="true" autocomplete="off" required> 
+        </div>
+        <button type='submit'>Create</button>
+    </form>
+</body>
+</html>
+
+
